@@ -1,0 +1,26 @@
+(define graph-test
+  '((1 (2 3))
+    (2 (1 3))
+    (3 (1 2))))
+
+(map car graph-test)
+
+(define vertex-test
+  '(1 (2 3)))
+
+(cadr vertex-test)
+
+(define get-edges
+  (lambda (vertex)
+    (map (lambda (node)
+           (list (car vertex) node)) (cadr vertex))))
+
+(get-edges vertex-test)
+
+(map get-edges graph-test)
+
+(define make-edge
+  (lambda (vertex-1 vertex-2)
+    (list vertex-1 vertex-2)))
+
+(define vertices '(A B C D E F G))
